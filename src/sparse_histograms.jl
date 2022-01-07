@@ -13,7 +13,7 @@ function to_sparse(x; threshold)
   ret
 end
 
-mutable struct SparseHistogramFilter{RangeType <: Real}
+mutable struct SparseHistogramFilter{RangeType <: Real} <: AbstractHistogramFilter
   range::Tuple{Vector{RangeType},Vector{RangeType}}
   data::SparseVector{Float64, Int64}
 

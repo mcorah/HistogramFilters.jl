@@ -49,7 +49,7 @@ duplicate(x::SparseHistogramFilter) = SparseHistogramFilter(x)
 # Note, this will fail if no threshold is given when converting a
 # HistogramFilter
 function SparseHistogramFilter(x::AbstractHistogramFilter; threshold = x.threshold)
-  SparseHistogramFilter(get_range(x), to_sparse(get_data(x), threshold=threshold),
+  SparseHistogramFilter(get_range(x), to_sparse(get_values(x), threshold=threshold),
                   threshold=threshold)
 end
 
@@ -118,4 +118,4 @@ function drop_below_threshold!(x::SparseHistogramFilter;
 end
 drop_below_threshold!(x::HistogramFilter; kwargs...) = nothing
 
-sparsity(x::SparseHistogramFilter) =  1.0 - nnz(get_data(x)) / length(get_data(x))
+sparsity(x::SparseHistogramFilter) =  1.0 - nnz(get_values(x)) / length(get_values(x))

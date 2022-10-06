@@ -2,12 +2,10 @@ module HistogramFilters
 
 export AbstractHistogramFilter
 
-export HistogramFilter, duplicate, reset_distribution, ndim, get_data, get_values,
-  get_buffer, swap_buffer!, copy_filter!, get_range, generate_prior,
-  test_histogram, weighted_average, size
+export HistogramFilter, reset_distribution, swap_buffer!, copy_filter!,
+       generate_prior, test_histogram, weighted_average
 
-export SparseHistogramFilter, to_sparse, set_threshold!, drop_below_threshold!,
-  sparsity
+export SparseHistogramFilter, set_threshold!, drop_below_threshold!
 
 abstract type AbstractHistogramFilter end
 

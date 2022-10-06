@@ -2,7 +2,7 @@ module HistogramFilters
 
 export AbstractHistogramFilter
 
-export HistogramFilter, duplicate, reset_distribution, ndim, get_data, get_values,
+export HistogramFilter, duplicate, reset_distribution, ndim, get_data, get_data,
   get_buffer, swap_buffer!, copy_filter!, get_range, generate_prior,
   test_histogram, weighted_average, size
 
@@ -12,7 +12,7 @@ export SparseHistogramFilter, to_sparse, set_threshold!, drop_below_threshold!,
 abstract type AbstractHistogramFilter end
 
 # Returns the data values themselves (as in for sparse matrices)
-get_values(x::AbstractHistogramFilter) = x.data
+get_data(x::AbstractHistogramFilter) = x.data
 get_buffer(x::AbstractHistogramFilter) = x.buffer
 
 get_range(x::AbstractHistogramFilter) = x.range
